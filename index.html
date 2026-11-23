@@ -270,13 +270,16 @@
 </footer>
 
 <script>
-var ENDPOINT = ""; // כתובת לשמירת ההרשמות תתווסף לפני שמפיצים את האתר
+var ENDPOINT = "https://docs.google.com/forms/d/e/1FAIpQLSdko6l_lLP4ysE-xxQVVjLe0utLMJEk5A4soBMACfrx6n1YMQ/formResponse";
+var MAP = {name:"entry.1956765470", phone:"entry.1432497175", city:"entry.395793447", question:"entry.273515955"};
 function sendForm(e){
   e.preventDefault();
   var f=document.getElementById('f');
-  var data=new URLSearchParams(new FormData(f));
+  var data=new URLSearchParams();
+  Object.keys(MAP).forEach(function(k){ var el=f.elements[k]; data.append(MAP[k], el ? el.value : ""); });
+  data.append("entry.1913125560", f.elements.updates.checked ? "כן" : "לא");
+  data.append("entry.1274194645", f.elements.partners.checked ? "כן" : "לא");
   var done=function(){document.getElementById('fields').style.display='none';document.getElementById('ok').style.display='block';};
-  if(!ENDPOINT){done();return false;}
   fetch(ENDPOINT,{method:'POST',body:data,mode:'no-cors'}).then(done).catch(done);
   return false;
 }
