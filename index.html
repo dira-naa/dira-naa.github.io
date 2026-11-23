@@ -90,6 +90,10 @@
   form h3{font-family:'Frank Ruhl Libre',serif;font-size:26px;color:var(--navy);margin-bottom:6px}
   form .note{color:var(--muted);font-size:15px;margin-bottom:10px}
   label{display:block;font-weight:500;margin:14px 0 6px;font-size:15px}
+  select{width:100%;padding:13px 15px;border:1px solid #d9cfba;border-radius:12px;font:inherit;background:#fffdf8}
+  .pform{background:rgba(255,255,255,.06);border:1px solid rgba(201,162,74,.3);box-shadow:none;max-width:620px;margin:0 auto;text-align:right;color:#fff}
+  .pform label{color:#e6e9f0}
+  .pform .ok b{color:#fff}
   input,textarea{width:100%;padding:13px 15px;border:1px solid #d9cfba;border-radius:12px;font:inherit;background:#fffdf8;transition:border .2s,box-shadow .2s}
   input:focus,textarea:focus{outline:0;border-color:var(--gold);box-shadow:0 0 0 4px rgba(201,162,74,.15)}
   .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
@@ -233,6 +237,26 @@
       </div>
       <label for="city">עיר</label>
       <input id="city" name="city">
+      <div class="row">
+        <div><label for="goal">מה המטרה?</label>
+          <select id="goal" name="goal" required>
+            <option value="">בחר…</option>
+            <option>דירה לילד</option>
+            <option>דירה לעצמי</option>
+            <option>השקעה</option>
+            <option>עוד לא יודע</option>
+          </select></div>
+        <div><label for="equity">כמה הון עצמי יש?</label>
+          <select id="equity" name="equity" required>
+            <option value="">בחר…</option>
+            <option>אין הון עצמי</option>
+            <option>עד 100 אלף ₪</option>
+            <option>100–300 אלף ₪</option>
+            <option>300–600 אלף ₪</option>
+            <option>מעל 600 אלף ₪</option>
+            <option>מעדיף לא לומר</option>
+          </select></div>
+      </div>
       <label for="q">מה השאלה הכי בוערת לך בנושא דירה?</label>
       <textarea id="q" name="question" rows="3"></textarea>
       <div class="agree"><input type="checkbox" id="ok1" name="updates" required><label for="ok1" style="margin:0;font-weight:400">אני מאשר לקבל עדכונים מ"דירה נאה" על הערב. אפשר לבטל בכל רגע.</label></div>
@@ -259,7 +283,37 @@
     <span class="kicker">לאנשי מקצוע</span>
     <h2>רוצים להרצות או להציג בערב?</h2>
     <p>מרצים ונותני חסות מתחום הנדל"ן, המשכנתאות והמשפט: נשמח לשמוע מכם.</p>
-    <a class="btn" href="mailto:dwd180951@gmail.com?subject=%D7%93%D7%99%D7%A8%D7%94%20%D7%A0%D7%90%D7%94%20-%20%D7%A9%D7%99%D7%AA%D7%95%D7%A3%20%D7%A4%D7%A2%D7%95%D7%9C%D7%94">כתבו לנו</a>
+    <form id="pf" class="pform" onsubmit="return sendPartner(event)">
+      <div id="pfields">
+        <div class="row">
+          <div><label for="pname">שם</label><input id="pname" name="pname" required></div>
+          <div><label for="pphone">טלפון</label><input id="pphone" name="pphone" type="tel" required></div>
+        </div>
+        <div class="row">
+          <div><label for="prole">תחום</label>
+            <select id="prole" name="prole" required>
+              <option value="">בחר…</option>
+              <option>יועץ משכנתאות</option>
+              <option>עורך דין</option>
+              <option>יזם / קבלן</option>
+              <option>מתווך</option>
+              <option>שמאי</option>
+              <option>אחר</option>
+            </select></div>
+          <div><label for="pwant">מה מעניין אותך?</label>
+            <select id="pwant" name="pwant" required>
+              <option value="">בחר…</option>
+              <option>להרצות</option>
+              <option>דוכן / חסות</option>
+              <option>גם וגם</option>
+            </select></div>
+        </div>
+        <label for="pmsg">כמה מילים עליך (לא חובה)</label>
+        <textarea id="pmsg" name="pmsg" rows="2"></textarea>
+        <button type="submit" class="btn">שלחו, ונחזור אליכם</button>
+      </div>
+      <div class="ok" id="pok"><b>תודה!</b>קיבלנו את הפרטים ונחזור אליך בהקדם.</div>
+    </form>
   </div>
 </div></section>
 
@@ -276,10 +330,27 @@ function sendForm(e){
   e.preventDefault();
   var f=document.getElementById('f');
   var data=new URLSearchParams();
-  Object.keys(MAP).forEach(function(k){ var el=f.elements[k]; data.append(MAP[k], el ? el.value : ""); });
+  data.append(MAP.name, f.elements.name.value);
+  data.append(MAP.phone, f.elements.phone.value);
+  data.append(MAP.city, f.elements.city.value);
+  data.append(MAP.question, "מטרה: " + f.elements.goal.value + " | הון עצמי: " + f.elements.equity.value + " | שאלה: " + f.elements.question.value);
   data.append("entry.1913125560", f.elements.updates.checked ? "כן" : "לא");
   data.append("entry.1274194645", f.elements.partners.checked ? "כן" : "לא");
   var done=function(){document.getElementById('fields').style.display='none';document.getElementById('ok').style.display='block';};
+  fetch(ENDPOINT,{method:'POST',body:data,mode:'no-cors'}).then(done).catch(done);
+  return false;
+}
+function sendPartner(e){
+  e.preventDefault();
+  var f=document.getElementById('pf');
+  var data=new URLSearchParams();
+  data.append(MAP.name, f.elements.pname.value);
+  data.append(MAP.phone, f.elements.pphone.value);
+  data.append(MAP.city, "איש מקצוע: " + f.elements.prole.value);
+  data.append(MAP.question, "רוצה: " + f.elements.pwant.value + " | " + f.elements.pmsg.value);
+  data.append("entry.1913125560", "איש מקצוע");
+  data.append("entry.1274194645", "-");
+  var done=function(){document.getElementById('pfields').style.display='none';document.getElementById('pok').style.display='block';};
   fetch(ENDPOINT,{method:'POST',body:data,mode:'no-cors'}).then(done).catch(done);
   return false;
 }
