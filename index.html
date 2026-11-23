@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>דירה נאה – ערבי לימוד נדל"ן לציבור החרדי</title>
+<meta name="description" content="דירה נאה – ערבי לימוד נדל&quot;ן לציבור החרדי. איך קונים דירה לילד גם עם הון קטן. הערב הראשון בקרוב בירושלים.">
+<link rel="icon" href="logo.svg">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;700;900&family=Heebo:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{--navy:#0f1b30;--navy2:#1d2b44;--gold:#c9a24a;--gold2:#e6c77a;--cream:#faf6ee;--ink:#1c1f26;--muted:#646b78;--line:#e8dfcc}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Heebo',Arial,sans-serif;color:var(--ink);background:var(--cream);line-height:1.75;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  .serif{font-family:'Frank Ruhl Libre',serif}
+  .gold-text{background:linear-gradient(90deg,var(--gold),var(--gold2),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+
+  /* NAV */
+  nav{position:fixed;top:0;right:0;left:0;z-index:20;background:rgba(15,27,48,.82);backdrop-filter:blur(10px);border-bottom:1px solid rgba(201,162,74,.18)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:70px}
+  .brand{display:flex;align-items:center;gap:12px;color:#fff;text-decoration:none}
+  .brand img{height:44px;width:44px;border-radius:50%;border:1px solid rgba(201,162,74,.5)}
+  .brand span{font-family:'Frank Ruhl Libre',serif;font-size:22px;font-weight:700;letter-spacing:.5px}
+  .links{display:flex;gap:28px;align-items:center}
+  .links a{color:#d9dde6;text-decoration:none;font-size:15px}
+  .links a:hover{color:var(--gold2)}
+  .btn{display:inline-block;background:linear-gradient(135deg,var(--gold),#b0863a);color:#fff;text-decoration:none;font-weight:700;padding:12px 28px;border-radius:40px;box-shadow:0 8px 24px rgba(201,162,74,.35);transition:transform .2s,box-shadow .2s;border:0;cursor:pointer;font-family:inherit;font-size:16px}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(201,162,74,.45)}
+  .btn.ghost{background:transparent;border:1px solid rgba(201,162,74,.6);color:var(--gold2);box-shadow:none}
+
+  /* HERO */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;background:radial-gradient(ellipse at 70% 20%,#24365a 0%,var(--navy) 55%,#08111f 100%);color:#fff;overflow:hidden;padding:110px 0 80px}
+  .hero:before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(201,162,74,.12) 1px,transparent 1px);background-size:28px 28px;opacity:.5}
+  .skyline{position:absolute;bottom:0;right:0;left:0;width:100%;height:auto;opacity:.9}
+  .hero .wrap{position:relative;z-index:2;text-align:center}
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(201,162,74,.45);color:var(--gold2);padding:7px 20px;border-radius:30px;font-size:14px;letter-spacing:1px;margin-bottom:28px;background:rgba(201,162,74,.06)}
+  .eyebrow i{width:8px;height:8px;border-radius:50%;background:var(--gold);box-shadow:0 0 12px var(--gold)}
+  .hero h1{font-family:'Frank Ruhl Libre',serif;font-weight:900;font-size:clamp(44px,7vw,84px);line-height:1.12}
+  .hero .lead{font-size:clamp(18px,2.2vw,22px);color:#cfd5e1;max-width:680px;margin:22px auto 0;font-weight:300}
+  .hero .quote{font-family:'Frank Ruhl Libre',serif;color:var(--gold2);margin-top:22px;font-size:18px;opacity:.9}
+  .hero .ctas{margin-top:38px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .stats{display:flex;justify-content:center;gap:48px;margin-top:56px;flex-wrap:wrap}
+  .stat b{display:block;font-family:'Frank Ruhl Libre',serif;font-size:30px;color:var(--gold2)}
+  .stat small{color:#aab3c4;font-size:14px}
+
+  /* SECTIONS */
+  section{padding:96px 0}
+  .kicker{color:var(--gold);font-weight:700;letter-spacing:2px;font-size:13px;margin-bottom:10px;display:block}
+  h2{font-family:'Frank Ruhl Libre',serif;font-size:clamp(32px,4vw,46px);color:var(--navy);line-height:1.2;margin-bottom:18px}
+  .sub{color:var(--muted);font-size:18px;max-width:640px}
+  .center{text-align:center}.center .sub{margin:0 auto}
+
+  .about{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
+  .about p{font-size:18px;margin-bottom:14px;color:#3a3f4a}
+  .seal{background:linear-gradient(160deg,var(--navy2),var(--navy));border-radius:24px;padding:46px 36px;color:#fff;text-align:center;position:relative;box-shadow:0 30px 60px rgba(15,27,48,.25)}
+  .seal:after{content:"";position:absolute;inset:12px;border:1px solid rgba(201,162,74,.35);border-radius:16px;pointer-events:none}
+  .seal img{width:130px;border-radius:50%;margin-bottom:18px}
+  .seal blockquote{font-family:'Frank Ruhl Libre',serif;font-size:24px;line-height:1.5;color:var(--gold2)}
+  .seal cite{display:block;margin-top:12px;color:#aab3c4;font-style:normal;font-size:14px}
+
+  .topics{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:46px}
+  .topic{background:#fff;border:1px solid var(--line);border-radius:20px;padding:30px 24px;transition:transform .25s,box-shadow .25s;position:relative;overflow:hidden}
+  .topic:hover{transform:translateY(-6px);box-shadow:0 24px 50px rgba(15,27,48,.12)}
+  .topic .num{font-family:'Frank Ruhl Libre',serif;font-size:44px;font-weight:900;color:rgba(201,162,74,.25);line-height:1}
+  .topic h3{font-size:20px;color:var(--navy);margin:12px 0 8px}
+  .topic p{color:var(--muted);font-size:15.5px}
+  .topic:before{content:"";position:absolute;top:0;right:0;left:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--gold2))}
+
+  .dark{background:linear-gradient(180deg,var(--navy),#0b1526);color:#fff}
+  .dark h2{color:#fff}
+  .dark .sub{color:#aab3c4}
+  .why{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:44px}
+  .why div{display:flex;gap:18px;align-items:flex-start;background:rgba(255,255,255,.04);border:1px solid rgba(201,162,74,.18);border-radius:18px;padding:24px}
+  .why .ic{flex:0 0 46px;height:46px;border-radius:50%;background:rgba(201,162,74,.12);color:var(--gold2);display:flex;align-items:center;justify-content:center;font-size:20px}
+  .why h3{font-size:19px;margin-bottom:4px}
+  .why p{color:#aab3c4;font-size:15.5px}
+
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:46px;counter-reset:s}
+  .step{text-align:center;padding:10px}
+  .step .c{width:64px;height:64px;margin:0 auto 16px;border-radius:50%;border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Frank Ruhl Libre',serif;font-size:26px;font-weight:700;color:var(--gold)}
+  .step h3{color:var(--navy);font-size:20px;margin-bottom:6px}
+  .step p{color:var(--muted)}
+
+  .reg{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+  .reg ul{list-style:none;margin-top:20px}
+  .reg li{padding:8px 32px 8px 0;position:relative;font-size:17px}
+  .reg li:before{content:"✦";position:absolute;right:0;color:var(--gold)}
+  form{background:#fff;border-radius:24px;padding:36px;box-shadow:0 30px 70px rgba(15,27,48,.14);border:1px solid var(--line)}
+  form h3{font-family:'Frank Ruhl Libre',serif;font-size:26px;color:var(--navy);margin-bottom:6px}
+  form .note{color:var(--muted);font-size:15px;margin-bottom:10px}
+  label{display:block;font-weight:500;margin:14px 0 6px;font-size:15px}
+  input,textarea{width:100%;padding:13px 15px;border:1px solid #d9cfba;border-radius:12px;font:inherit;background:#fffdf8;transition:border .2s,box-shadow .2s}
+  input:focus,textarea:focus{outline:0;border-color:var(--gold);box-shadow:0 0 0 4px rgba(201,162,74,.15)}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .agree{display:flex;gap:10px;align-items:flex-start;font-size:14px;margin-top:14px;color:var(--muted)}
+  .agree input{width:auto;margin-top:5px;accent-color:var(--gold)}
+  form .btn{width:100%;margin-top:22px;padding:15px}
+  .ok{display:none;text-align:center;padding:30px 10px}
+  .ok b{font-family:'Frank Ruhl Libre',serif;font-size:26px;color:var(--navy);display:block;margin-bottom:6px}
+
+  .faq{max-width:780px;margin:40px auto 0}
+  details{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px 24px;margin-bottom:12px}
+  summary{font-weight:700;color:var(--navy);cursor:pointer;list-style:none;display:flex;justify-content:space-between;font-size:17px}
+  summary::-webkit-details-marker{display:none}
+  summary:after{content:"+";color:var(--gold);font-size:22px;line-height:1}
+  details[open] summary:after{content:"–"}
+  details p{margin-top:10px;color:#4a505c}
+
+  .partners{background:linear-gradient(135deg,var(--navy2),var(--navy));color:#fff;border-radius:28px;padding:56px 40px;text-align:center;position:relative;overflow:hidden}
+  .partners h2{color:#fff}
+  .partners p{color:#c3cad8;font-size:18px;margin-bottom:26px}
+
+  footer{text-align:center;padding:40px 0 50px;color:var(--muted);font-size:14px}
+  footer img{width:52px;border-radius:50%;margin-bottom:10px}
+
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  @media (max-width:900px){
+    .links a:not(.btn){display:none}
+    .about,.reg{grid-template-columns:1fr}
+    .topics{grid-template-columns:1fr 1fr}
+    .why,.steps{grid-template-columns:1fr}
+    section{padding:70px 0}
+  }
+  @media (max-width:560px){.topics{grid-template-columns:1fr}.row{grid-template-columns:1fr}.stats{gap:28px}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <a class="brand" href="#top"><img src="logo.svg" alt=""><span>דירה נאה</span></a>
+  <div class="links">
+    <a href="#about">מה זה</a>
+    <a href="#topics">מה לומדים</a>
+    <a href="#faq">שאלות</a>
+    <a class="btn" href="#register">הרשמה מוקדמת</a>
+  </div>
+</div></nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="eyebrow"><i></i>הערב הראשון · בקרוב בירושלים</div>
+    <h1>דירה לילד<br><span class="gold-text">גם עם הון קטן</span></h1>
+    <p class="lead">ערבי לימוד נדל"ן לציבור החרדי. ידע אמיתי מאנשי מקצוע מהשטח, בערב מכובד ובלי מכירות מהבמה.</p>
+    <p class="quote">"שלושה מרחיבין דעתו של אדם... דירה נאה"</p>
+    <div class="ctas">
+      <a class="btn" href="#register">אני רוצה להגיע</a>
+      <a class="btn ghost" href="#about">לפרטים</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>ערב אחד</b><small>שעונה על השאלות הבוערות</small></div>
+      <div class="stat"><b>אנשי מקצוע</b><small>מהשטח, בגובה העיניים</small></div>
+      <div class="stat"><b>0 מכירות</b><small>מהבמה, רק לימוד</small></div>
+    </div>
+  </div>
+  <svg class="skyline" viewBox="0 0 1440 220" preserveAspectRatio="none" aria-hidden="true">
+    <defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c9a24a" stop-opacity=".35"/><stop offset="1" stop-color="#c9a24a" stop-opacity="0"/></linearGradient></defs>
+    <path fill="url(#g)" d="M0 220V170h60v-30h40v30h50v-60h30v-20h20v20h30v60h40v-40h60v40h30v-90l25-30 25 30v90h40v-50h70v50h30v-70h20a40 40 0 0 1 80 0h20v70h40v-40h50v40h60v-110l30-25 30 25v110h40v-60h70v60h40v-30h30l10-20 10 20h30v30h50v-80h60v80h50v-50h40v50h40v-100l35-28 35 28v100h40v-40h60v40h50v-60h40v60h60v50z"/>
+    <path fill="#08111f" d="M0 220v-28h1440v28z"/>
+  </svg>
+</header>
+
+<section id="about"><div class="wrap about">
+  <div class="reveal">
+    <span class="kicker">מה זה "דירה נאה"</span>
+    <h2>ידע שחוסך טעויות של מאות אלפי שקלים</h2>
+    <p>"דירה נאה" היא סדרת ערבי לימוד חדשה לאבות ובעלי בתים מהציבור החרדי, שרוצים להבין איך קונים דירה ואיך משקיעים בנדל"ן בצורה נבונה, גם בלי הון גדול.</p>
+    <p>בכל ערב: נושא אחד שבוער לכולם, מרצים מהשטח, ותשובות אמיתיות לשאלות שלכם, בשפה פשוטה ובאווירה מכובדת.</p>
+  </div>
+  <div class="seal reveal">
+    <img src="logo.svg" alt="">
+    <blockquote>"שלושה מרחיבין דעתו של אדם... דירה נאה"</blockquote>
+    <cite>מסכת ברכות</cite>
+  </div>
+</div></section>
+
+<section id="topics" style="background:#fff"><div class="wrap center">
+  <span class="kicker">הערב הראשון</span>
+  <h2>מה תלמדו</h2>
+  <p class="sub">ארבעה נושאים, ערב אחד, ותמונה ברורה של הדרך לדירה.</p>
+  <div class="topics" style="text-align:right">
+    <div class="topic reveal"><div class="num">01</div><h3>דירה לילד עם מעט הון</h3><p>מה האפשרויות היום, ואיך מתחילים כבר עכשיו.</p></div>
+    <div class="topic reveal"><div class="num">02</div><h3>משכנתא בלי טעויות</h3><p>על מה לשים לב לפני שחותמים מול הבנק.</p></div>
+    <div class="topic reveal"><div class="num">03</div><h3>מה בודקים לפני חוזה</h3><p>הטעויות הנפוצות שעולות ביוקר, ואיך נמנעים מהן.</p></div>
+    <div class="topic reveal"><div class="num">04</div><h3>להשקיע כשר</h3><p>ריבית והיתר עסקה, בשפה פשוטה וברורה.</p></div>
+  </div>
+</div></section>
+
+<section class="dark"><div class="wrap">
+  <div class="center">
+    <span class="kicker">למה לבוא</span>
+    <h2>ערב שנבנה בשבילכם</h2>
+    <p class="sub">בלי לחץ, בלי שיווק, ועם כבוד לזמן שלכם.</p>
+  </div>
+  <div class="why">
+    <div class="reveal"><span class="ic">✦</span><span><h3>לימוד, לא מכירות</h3><p>אין מכירת פרויקטים מהבמה. באים ללמוד ולשאול.</p></span></div>
+    <div class="reveal"><span class="ic">✦</span><span><h3>מותאם לציבור החרדי</h3><p>ערב לגברים, אחרי סדר ערב, בכשרות מהודרת.</p></span></div>
+    <div class="reveal"><span class="ic">✦</span><span><h3>אנשי מקצוע מהשטח</h3><p>שאלות ותשובות פתוחות עם מי שעושה את זה כל יום.</p></span></div>
+    <div class="reveal"><span class="ic">✦</span><span><h3>מקומות מוגבלים</h3><p>הכניסה בהרשמה מראש, והנרשמים מוקדם מקבלים עדיפות.</p></span></div>
+  </div>
+</div></section>
+
+<section><div class="wrap center">
+  <span class="kicker">איך זה עובד</span>
+  <h2>שלושה צעדים פשוטים</h2>
+  <div class="steps">
+    <div class="step reveal"><div class="c">1</div><h3>נרשמים מראש</h3><p>משאירים פרטים בטופס, בלי שום התחייבות.</p></div>
+    <div class="step reveal"><div class="c">2</div><h3>מקבלים עדכון</h3><p>שולחים לכם את התאריך והמקום לפני כולם.</p></div>
+    <div class="step reveal"><div class="c">3</div><h3>מגיעים ולומדים</h3><p>ערב אחד שנותן תמונה ברורה ושקט בראש.</p></div>
+  </div>
+</div></section>
+
+<section id="register" style="background:#fff"><div class="wrap reg">
+  <div class="reveal">
+    <span class="kicker">הרשמה מוקדמת</span>
+    <h2>שמרו לעצמכם מקום</h2>
+    <p class="sub">השאירו פרטים, ונעדכן אתכם על התאריך והמקום לפני הפרסום הרשמי.</p>
+    <ul>
+      <li>עדיפות לנרשמים מראש</li>
+      <li>אפשר לשלוח לנו את השאלה שלכם מראש</li>
+      <li>בלי שום התחייבות</li>
+    </ul>
+  </div>
+  <form id="f" onsubmit="return sendForm(event)" class="reveal">
+    <div id="fields">
+      <h3>אני רוצה להגיע</h3>
+      <p class="note">לוקח פחות מדקה.</p>
+      <div class="row">
+        <div><label for="name">שם</label><input id="name" name="name" required></div>
+        <div><label for="phone">טלפון</label><input id="phone" name="phone" type="tel" required></div>
+      </div>
+      <label for="city">עיר</label>
+      <input id="city" name="city">
+      <label for="q">מה השאלה הכי בוערת לך בנושא דירה?</label>
+      <textarea id="q" name="question" rows="3"></textarea>
+      <div class="agree"><input type="checkbox" id="ok1" name="updates" required><label for="ok1" style="margin:0;font-weight:400">אני מאשר לקבל עדכונים מ"דירה נאה" על הערב. אפשר לבטל בכל רגע.</label></div>
+      <div class="agree"><input type="checkbox" id="ok2" name="partners"><label for="ok2" style="margin:0;font-weight:400">אני מאשר שאנשי המקצוע שמרצים בערב יפנו אליי (לא חובה).</label></div>
+      <button type="submit" class="btn">שמרו לי מקום</button>
+    </div>
+    <div class="ok" id="ok"><b>תודה, נרשמת!</b>נעדכן אותך ברגע שיפורסמו התאריך והמקום.</div>
+  </form>
+</div></section>
+
+<section id="faq"><div class="wrap center">
+  <span class="kicker">שאלות נפוצות</span>
+  <h2>יש שאלות? יש תשובות</h2>
+  <div class="faq" style="text-align:right">
+    <details><summary>מי עומד מאחורי "דירה נאה"?</summary><p>צוות קטן מתחום הארגון והטכנולוגיה, שרוצה להנגיש לציבור החרדי ידע אמיתי על נדל"ן. זו סדרת ערבים חדשה, וזה הערב הראשון.</p></details>
+    <details><summary>אתם מוכרים דירות או נותנים ייעוץ?</summary><p>לא. אנחנו רק מארגנים את ערבי הלימוד. המידע בערב הוא כללי, ואינו ייעוץ השקעות או ייעוץ משפטי.</p></details>
+    <details><summary>כמה זה עולה?</summary><p>הפרטים יפורסמו יחד עם התאריך. הנרשמים מראש יקבלו עדיפות.</p></details>
+    <details><summary>מי מממן את הערב?</summary><p>נותני חסות מתחום הנדל"ן, שמציגים בדוכנים. מהבמה אין מכירות.</p></details>
+  </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <div class="partners reveal">
+    <span class="kicker">לאנשי מקצוע</span>
+    <h2>רוצים להרצות או להציג בערב?</h2>
+    <p>מרצים ונותני חסות מתחום הנדל"ן, המשכנתאות והמשפט: נשמח לשמוע מכם.</p>
+    <a class="btn" href="mailto:dwd180951@gmail.com?subject=%D7%93%D7%99%D7%A8%D7%94%20%D7%A0%D7%90%D7%94%20-%20%D7%A9%D7%99%D7%AA%D7%95%D7%A3%20%D7%A4%D7%A2%D7%95%D7%9C%D7%94">כתבו לנו</a>
+  </div>
+</div></section>
+
+<footer>
+  <img src="logo.svg" alt=""><br>
+  © דירה נאה · ערבי לימוד נדל"ן לציבור החרדי<br>
+  המידע באתר ובערבים הוא כללי, ואינו מהווה ייעוץ השקעות או ייעוץ משפטי.
+</footer>
+
+<script>
+var ENDPOINT = ""; // כתובת לשמירת ההרשמות תתווסף לפני שמפיצים את האתר
+function sendForm(e){
+  e.preventDefault();
+  var f=document.getElementById('f');
+  var data=new URLSearchParams(new FormData(f));
+  var done=function(){document.getElementById('fields').style.display='none';document.getElementById('ok').style.display='block';};
+  if(!ENDPOINT){done();return false;}
+  fetch(ENDPOINT,{method:'POST',body:data,mode:'no-cors'}).then(done).catch(done);
+  return false;
+}
+var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}})},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+</script>
+</body>
+</html>
