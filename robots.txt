@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dira-naa.github.io/sitemap.xml
